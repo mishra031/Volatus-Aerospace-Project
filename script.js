@@ -1,0 +1,18 @@
+const menuBtn=document.getElementById("menuBtn")
+const nav=document.getElementById("nav")
+const year=document.getElementById("year")
+const form=document.getElementById("contactForm")
+const formMsg=document.getElementById("formMsg")
+if(year)year.textContent=new Date().getFullYear()
+menuBtn.addEventListener("click",()=>{nav.classList.toggle("show")})
+document.addEventListener("click",e=>{if(!e.target.closest(".site-header"))nav.classList.remove("show")})
+form.addEventListener("submit",e=>{
+  e.preventDefault()
+  const data=new FormData(form)
+  const name=data.get("name")
+  const email=data.get("email")
+  const message=data.get("message")
+  form.reset()
+  formMsg.textContent=`Thanks ${name || "there"} — message received.`
+  setTimeout(()=>formMsg.textContent="",3500)
+})
