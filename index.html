@@ -1,365 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Volatus Aerospace - Innovating the Future</title>
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Optional: tailwind script from original (kept as external) -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="main-wrapper">
-    <!-- Header -->
-    <header class="header">
-      <div class="logo">
-        <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 10L90 35V65L50 90L10 65V35L50 10Z" fill="#00AEEF" />
-          <path d="M50 30L70 42.5V57.5L50 70L30 57.5V42.5L50 30Z" fill="#ffffff" />
-        </svg>
-        <span>Volatus Aerospace</span>
-      </div>
 
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li class="dropdown"><a href="#about">About</a>
-            <div class="dropdown-content">
-              <a href="#story">Our Story</a>
-              <a href="#leadership">Leadership</a>
-              <a href="#careers">Careers</a>
-            </div>
-          </li>
-
-          <li class="dropdown"><a href="#services">Services</a>
-            <div class="dropdown-content">
-              <a href="#aviation">Aviation Services</a>
-              <a href="#drone-ops">Drone Operations</a>
-              <a href="#training">Training &amp; Certification</a>
-            </div>
-          </li>
-
-          <li class="dropdown"><a href="#products">Products</a>
-            <div class="dropdown-content">
-              <a href="#drones">Drones &amp; UAVs</a>
-              <a href="#sensors">Sensors &amp; Payloads</a>
-              <a href="#software">Software Solutions</a>
-            </div>
-          </li>
-
-          <li class="dropdown"><a href="#industries">Industries</a>
-            <div class="dropdown-content">
-              <a href="#energy">Energy</a>
-              <a href="#infrastructure">Infrastructure</a>
-              <a href="#agriculture">Agriculture</a>
-              <a href="#safety">Public Safety</a>
-            </div>
-          </li>
-
-          <li class="dropdown"><a href="#resources">Resources</a>
-            <div class="dropdown-content">
-              <a href="#blog">Blog</a>
-              <a href="#cases">Case Studies</a>
-              <a href="#news">Newsroom</a>
-            </div>
-          </li>
-
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact" class="cta-buƩon">Request a Quote</a></li>
-        </ul>
-      </nav>
-
-      <div class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></div>
-    </header>
-
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav" id="mobileNav">
-      <ul class="mobile-nav-list">
-        <li><a href="#home" class="mobile-nav-link">Home</a></li>
-
-        <li>
-          <button class="mobile-dropdown-toggle" data-dropdown="about">About <span class="mobile-dropdown-arrow">▼</span></button>
-          <div class="mobile-dropdown-content" id="mobile-about">
-            <a href="#story" class="mobile-nav-link">Our Story</a>
-            <a href="#leadership" class="mobile-nav-link">Leadership</a>
-            <a href="#careers" class="mobile-nav-link">Careers</a>
-          </div>
-        </li>
-
-        <li>
-          <button class="mobile-dropdown-toggle" data-dropdown="services">Services <span class="mobile-dropdown-arrow">▼</span></button>
-          <div class="mobile-dropdown-content" id="mobile-services">
-            <a href="#aviation" class="mobile-nav-link">Aviation Services</a>
-            <a href="#drone-ops" class="mobile-nav-link">Drone Operations</a>
-            <a href="#training" class="mobile-nav-link">Training &amp; Certification</a>
-          </div>
-        </li>
-
-        <li>
-          <button class="mobile-dropdown-toggle" data-dropdown="products">Products <span class="mobile-dropdown-arrow">▼</span></button>
-          <div class="mobile-dropdown-content" id="mobile-products">
-            <a href="#drones" class="mobile-nav-link">Drones &amp; UAVs</a>
-            <a href="#sensors" class="mobile-nav-link">Sensors &amp; Payloads</a>
-            <a href="#software" class="mobile-nav-link">Software Solutions</a>
-          </div>
-        </li>
-
-        <li>
-          <button class="mobile-dropdown-toggle" data-dropdown="industries">Industries <span class="mobile-dropdown-arrow">▼</span></button>
-          <div class="mobile-dropdown-content" id="mobile-industries">
-            <a href="#energy" class="mobile-nav-link">Energy</a>
-            <a href="#infrastructure" class="mobile-nav-link">Infrastructure</a>
-            <a href="#agriculture" class="mobile-nav-link">Agriculture</a>
-            <a href="#safety" class="mobile-nav-link">Public Safety</a>
-          </div>
-        </li>
-
-        <li>
-          <button class="mobile-dropdown-toggle" data-dropdown="resources">Resources <span class="mobile-dropdown-arrow">▼</span></button>
-          <div class="mobile-dropdown-content" id="mobile-resources">
-            <a href="#blog" class="mobile-nav-link">Blog</a>
-            <a href="#cases" class="mobile-nav-link">Case Studies</a>
-            <a href="#news" class="mobile-nav-link">Newsroom</a>
-          </div>
-        </li>
-
-        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-        <li><a href="#contact" class="cta-buƩon mobile-cta">Request a Quote</a></li>
-      </ul>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="brand">Volatus Aerospace</div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <svg class="hero-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 10L20 30L20 50L50 70L80 50L80 30L50 10Z" stroke="#00AEEF" stroke-width="2" fill="rgba(0,174,239,0.2)" />
-          <circle cx="50" cy="50" r="8" fill="#00AEEF" />
-          <path d="M50 42L50 20M50 58L50 80M42 50L20 50M58 50L80 50" stroke="#ffffff" stroke-width="2" />
-        </svg>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Innovating the Future of Flight</h1>
+      <p>High-performance drones & aerospace solutions developed for global industries.</p>
+      <button class="cta-btn">Explore Now</button>
+    </div>
+  </section>
 
-        <h1 id="hero-headline">Innovating the Future of Aerospace and Drone Solutions</h1>
-        <p id="hero-subheadline">Leading the way in aviation services, advanced drone technology, and comprehensive training programs for a safer, smarter tomorrow.</p>
-
-        <div class="hero-buƩons">
-          <a href="#services" class="btn-primary">Explore Our Services</a>
-          <a href="#contact" class="btn-secondary">Get in Touch</a>
-        </div>
+  <!-- Services -->
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Drone Manufacturing</h3>
+        <p>High-quality aerospace-grade unmanned systems.</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>Surveillance Solutions</h3>
+        <p>AI-powered aerial monitoring for industries.</p>
+      </div>
+      <div class="card">
+        <h3>Aerial Delivery</h3>
+        <p>Fast, secure and optimized drone-based delivery systems.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="about-container">
-        <div class="about-image">
-          <!-- decorative svg -->
-          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 40L160 75V125L100 160L40 125V75L100 40Z" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="3" />
-            <circle cx="100" cy="100" r="25" fill="#ffffff" opacity="0.9" />
-            <path d="M85 100L95 110L115 90" stroke="#00AEEF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Products -->
+  <section class="products" id="products">
+    <h2>Our Products</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <h3>Falcon X1</h3>
+        <p>High-speed tactical surveillance drone.</p>
+      </div>
+      <div class="product-card">
+        <h3>AeroLift Cargo</h3>
+        <p>Heavy-payload delivery UAV system.</p>
+      </div>
+      <div class="product-card">
+        <h3>SkyVision Pro</h3>
+        <p>Autonomous inspection & monitoring drone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section class="blog" id="blog">
+    <h2>Latest Insights</h2>
+    <div class="blog-cards">
+      <div class="blog-card">
+        <h3>The Future of Aerospace AI</h3>
+        <p>How AI is reshaping aerial operations.</p>
+      </div>
+      <div class="blog-card">
+        <h3>Top 5 Drone Innovations in 2025</h3>
+        <p>Breakthrough tech transforming the drone market.</p>
+      </div>
+      <div class="blog-card">
+        <h3>Why Autonomous Drones Matter</h3>
+        <p>Understanding self-governing flight technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+
+      <div class="footer-section">
+        <h3>Volatus Aerospace</h3>
+        <p>Engineering the next generation of aerial innovation.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>Email: support@volatus.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Location: Bangalore, India</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+
+          <!-- Facebook -->
+          <svg width="28" height="28" fill="#ffffff">
+            <path d="M15 3h4V0h-4c-3.3 0-6 2.7-6 6v3H6v3h3v12h4V12h4l1-3h-5V6c0-1 .9-2 2-2z"/>
           </svg>
-        </div>
 
-        <div class="about-content">
-          <h2 id="about-title">About Volatus Aerospace</h2>
-          <p id="about-description">Volatus Aerospace is a leading provider of integrated drone solutions, combining cutting-edge technology with unparalleled expertise. We serve diverse industries including energy, infrastructure, agriculture, and public safety with our comprehensive suite of services and products.</p>
-          <p>Our mission is to revolutionize how businesses leverage aerial technology, delivering innovative solutions that enhance safety, efficiency, and operational excellence across all sectors.</p>
-        </div>
-      </div>
-    </section>
+          <!-- Twitter -->
+          <svg width="28" height="28" fill="#ffffff">
+            <path d="M28 5.3a11.4 11.4 0 0 1-3.2.9 5.6 5.6 0 0 0 2.5-3.1 11.4 11.4 0 0 1-3.6 1.4A5.6 5.6 0 0 0 19.4 3a5.6 5.6 0 0 0-5.6 5.6c0 .4 0 .9.1 1.3A15.9 15.9 0 0 1 1.9 4a5.6 5.6 0 0 0 1.7 7.5 5.6 5.6 0 0 1-2.5-.7v.1a5.6 5.6 0 0 0 4.5 5.5 5.6 5.6 0 0 1-2.5.1 5.6 5.6 0 0 0 5.3 3.9A11.3 11.3 0 0 1 0 24a15.9 15.9 0 0 0 8.6 2.5c10.3 0 15.9-8.6 15.9-15.9v-.7A11.1 11.1 0 0 0 28 5.3z"/>
+          </svg>
 
-    <!-- Services / Divisions -->
-    <section id="services" class="divisions">
-      <div class="divisions-container">
-        <h2 class="section-title">Our Key Divisions</h2>
-        <div class="divisions-grid">
-          <div class="division-card">
-            <svg class="division-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 20L30 35L30 65L50 80L70 65L70 35L50 20Z" fill="#00AEEF" opacity="0.2" />
-              <path d="M20 40L50 20L80 40" stroke="#00AEEF" stroke-width="3" stroke-linecap="round" />
-              <rect x="35" y="50" width="30" height="20" rx="2" fill="#002B5C" />
-              <circle cx="50" cy="45" r="3" fill="#00AEEF" />
-            </svg>
-            <h3>Aviation Services</h3>
-            <p>Comprehensive aircraft maintenance, repair, and operational support services delivered by certified professionals.</p>
-            <a href="#aviation" class="learn-more">Learn More →</a>
-          </div>
+          <!-- Instagram -->
+          <svg width="28" height="28" fill="#ffffff">
+            <path d="M14 3c3.1 0 3.5 0 4.7.1 1.2.1 1.9.3 2.4.6.6.3 1 .7 1.5 1.3.5.5 1 1 1.3 1.5.3.5.5 1.3.6 2.4.1 1.2.1 1.6.1 4.7s0 3.5-.1 4.7c-.1 1.2-.3 1.9-.6 2.4-.3.6-.7 1-1.3 1.5-.5.5-1 1-1.5 1.3-.5.3-1.3.5-2.4.6-1.2.1-1.6.1-4.7.1s-3.5 0-4.7-.1c-1.2-.1-1.9-.3-2.4-.6-.6-.3-1-.7-1.5-1.3-.5-.5-1-1-1.3-1.5-.3-.5-.5-1.3-.6-2.4C3 17.5 3 17.1 3 14s0-3.5.1-4.7C3.2 8.1 3.4 7.4 3.7 6.9c.3-.6.7-1 1.3-1.5.5-.5 1-1 1.5-1.3.5-.3 1.3-.5 2.4-.6C10.5 3 10.9 3 14 3m0 3.2c-3 0-3.4 0-4.6.1-.9.1-1.4.2-1.7.4-.4.2-.6.4-.8.8-.2.3-.3.8-.4 1.7-.1 1.2-.1 1.6-.1 4.6s0 3.4.1 4.6c.1.9.2 1.4.4 1.7.2.4.4.6.8.8.3.2.8.3 1.7.4 1.2.1 1.6.1 4.6.1s3.4 0 4.6-.1c.9-.1 1.4-.2 1.7-.4.4-.2.6-.4.8-.8.2-.3.3-.8.4-1.7.1-1.2.1-1.6.1-4.6s0-3.4-.1-4.6c-.1-.9-.2-1.4-.4-1.7-.2-.4-.4-.6-.8-.8-.3-.2-.8-.3-1.7-.4-1.2-.1-1.6-.1-4.6-.1zm0 3.8a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm6.2-1.5a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/>
+          </svg>
 
-          <div class="division-card">
-            <svg class="division-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 30L30 45L50 60L70 45L50 30Z" fill="#00AEEF" />
-              <path d="M30 45V55L50 70L70 55V45" stroke="#002B5C" stroke-width="2" />
-              <circle cx="50" cy="45" r="5" fill="#ffffff" />
-              <path d="M25 40L15 35M75 40L85 35M50 25L50 15M50 75L50 85" stroke="#00AEEF" stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <h3>Drone Solutions</h3>
-            <p>Advanced UAV operations, aerial surveying, and custom drone integration for industrial applications.</p>
-            <a href="#drone-ops" class="learn-more">Learn More →</a>
-          </div>
-
-          <div class="division-card">
-            <svg class="division-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="40" width="40" height="30" rx="3" stroke="#002B5C" stroke-width="3" fill="rgba(0,43,92,0.1)" />
-              <path d="M40 50L45 55L60 40" stroke="#00AEEF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              <circle cx="70" cy="30" r="8" fill="#00AEEF" opacity="0.3" />
-              <path d="M70 26V30L72 32" stroke="#00AEEF" stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <h3>Training &amp; Certification</h3>
-            <p>Industry-leading training programs for drone pilots, maintenance personnel, and aviation professionals.</p>
-            <a href="#training" class="learn-more">Learn More →</a>
-          </div>
         </div>
       </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="cta-content">
-        <h2 id="cta-headline">Partner with Volatus Aerospace</h2>
-        <p>Ready to transform your operations with innovative aerospace solutions? Let's discuss how we can help your organization achieve its goals.</p>
-        <a href="#contact" class="btn-secondary">Get Started Today</a>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="contact-container">
-        <h2>Contact Us</h2>
-        <form class="contact-form" id="contactForm">
-          <div class="form-message" id="formMessage"></div>
-
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your full name">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Tell us about your project or inquiry"></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Side Buttons -->
-    <div class="side-button-container">
-      <button class="side-btn scroll-to-top hidden" id="scrollToTop" aria-label="Scroll to top">
-        <span class="side-btn-tooltip">Back to Top</span>
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4L4 12L5.41 13.41L11 7.83V20H13V7.83L18.59 13.41L20 12L12 4Z"/></svg>
-      </button>
-
-      <button class="side-btn" id="quickContactBtn" aria-label="Quick contact">
-        <span class="side-btn-tooltip">Quick Contact</span>
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4M20 18H4V8L12 13L20 8V18M12 11L4 6H20L12 11Z"/></svg>
-      </button>
-
-      <a href="tel:+15551234567" class="side-btn" aria-label="Call us">
-        <span class="side-btn-tooltip">Call Us</span>
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/></svg>
-      </a>
     </div>
 
-    <!-- Info Modal -->
-    <div class="info-modal-overlay" id="infoModalOverlay">
-      <div class="info-modal">
-        <div class="info-modal-header">
-          <h2 id="infoModalTitle"></h2>
-          <button class="info-modal-close" id="infoModalClose" aria-label="Close">×</button>
-        </div>
-        <div class="info-modal-body" id="infoModalBody"></div>
-      </div>
-    </div>
+    <p class="footer-bottom">© 2025 Volatus Aerospace. All Rights Reserved.</p>
+  </footer>
 
-    <!-- Quick Contact Modal -->
-    <div class="quick-contact-modal" id="quickContactModal">
-      <div class="modal-header">
-        <h3>Quick Contact</h3>
-        <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-      </div>
-
-      <div class="modal-body">
-        <form id="quickContactForm">
-          <div class="quick-form-message" id="quickFormMessage"></div>
-
-          <div class="quick-form-group">
-            <label for="quickName">Name</label>
-            <input type="text" id="quickName" required placeholder="Your name">
-          </div>
-
-          <div class="quick-form-group">
-            <label for="quickEmail">Email</label>
-            <input type="email" id="quickEmail" required placeholder="your.email@example.com">
-          </div>
-
-          <div class="quick-form-group">
-            <label for="quickMessage">Message</label>
-            <textarea id="quickMessage" required placeholder="Your message"></textarea>
-          </div>
-
-          <button type="submit" class="quick-submit-btn">Send Message</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h4>Volatus Aerospace</h4>
-          <p class="footer-description" id="company-description">Leading the future of aerospace innovation with cutting-edge drone technology and comprehensive aviation solutions.</p>
-          <div class="social-icons">
-            <div class="social-icon" title="LinkedIn">
-              <!-- SVG icon -->
-            </div>
-            <div class="social-icon" title="YouTube"></div>
-            <div class="social-icon" title="Facebook"></div>
-            <div class="social-icon" title="Instagram"></div>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h4>Quick Links</h4>
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#services">Services</a>
-          <a href="#products">Products</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="footer-column">
-          <h4>Services</h4>
-          <a href="#aviation">Aviation Services</a>
-          <a href="#drone-ops">Drone Operations</a>
-          <a href="#training">Training Programs</a>
-          <a href="#consulting">Consulting</a>
-        </div>
-
-        <div class="footer-column">
-          <h4>Contact Info</h4>
-          <p>123 Aerospace Drive</p>
-          <p>Innovation City, ST 12345</p>
-          <p>Phone: (555) 123-4567</p>
-          <p>Email: info@volatusaerospace.com</p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p id="copyright-text">Copyright © 2025 Volatus Aerospace. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-
-  <!-- External JS -->
-  <script src="script.js" defer></script>
 </body>
 </html>
