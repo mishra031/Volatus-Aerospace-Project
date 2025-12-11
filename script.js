@@ -1,3 +1,5 @@
+Here's the complete script.js file:
+
 const defaultConfig = {
   background_color: "#002B5C",
   surface_color: "#ffffff",
@@ -43,7 +45,7 @@ async function onConfigChange(config) {
     el.style.color = textColor;
   });
   
-  document.querySelectorAll('.btn-primary, .cta-button, .submit-btn').forEach(btn => {
+  document.querySelectorAll('.btn-primary, .cta-button, .submit-btn, .side-btn, .quick-submit-btn').forEach(btn => {
     btn.style.background = primaryActionColor;
     btn.style.borderColor = primaryActionColor;
   });
@@ -289,64 +291,201 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-{
-  "persistence_enabled": false,
-  "app_name": "Volatus Aerospace Demo",
-  "edit_panel": {
-    "hero_section": {
-      "type": "label",
-      "text": "Hero Section",
-      "size": "large"
-    },
-    "hero_headline": {
-      "type": "text_input",
-      "label": "Hero Headline",
-      "placeholder": "Enter hero headline"
-    },
-    "hero_subheadline": {
-      "type": "text_input",
-      "label": "Hero Subheadline",
-      "placeholder": "Enter subheadline"
-    },
-    "about_section": {
-      "type": "label",
-      "text": "About Section",
-      "size": "large"
-    },
-    "about_title": {
-      "type": "text_input",
-      "label": "About Title",
-      "placeholder": "Enter about title"
-    },
-    "about_description": {
-      "type": "text_input",
-      "label": "About Description",
-      "placeholder": "Enter about description"
-    },
-    "cta_section": {
-      "type": "label",
-      "text": "Call to Action",
-      "size": "large"
-    },
-    "cta_headline": {
-      "type": "text_input",
-      "label": "CTA Headline",
-      "placeholder": "Enter CTA headline"
-    },
-    "footer_section": {
-      "type": "label",
-      "text": "Footer",
-      "size": "large"
-    },
-    "company_description": {
-      "type": "text_input",
-      "label": "Company Description",
-      "placeholder": "Enter company description"
-    },
-    "copyright_text": {
-      "type": "text_input",
-      "label": "Copyright Text",
-      "placeholder": "Enter copyright text"
-    }
+// Scroll to top functionality
+const scrollToTopBtn = document.getElementById('scrollToTop');
+const mainWrapper = document.querySelector('.main-wrapper');
+
+mainWrapper.addEventListener('scroll', function() {
+  if (mainWrapper.scrollTop > 300) {
+    scrollToTopBtn.classList.remove('hidden');
+  } else {
+    scrollToTopBtn.classList.add('hidden');
+  }
+});
+
+scrollToTopBtn.addEventListener('click', function() {
+  mainWrapper.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Quick contact modal functionality
+const quickContactBtn = document.getElementById('quickContactBtn');
+const quickContactModal = document.getElementById('quickContactModal');
+const modalClose = document.getElementById('modalClose');
+const quickContactForm = document.getElementById('quickContactForm');
+const quickFormMessage = document.getElementById('quickFormMessage');
+
+quickContactBtn.addEventListener('click', function() {
+  quickContactModal.classList.toggle('active');
+});
+
+modalClose.addEventListener('click', function() {
+  quickContactModal.classList.remove('active');
+});
+
+// Close modal when clicking outside
+document.addEventListener('click', function(e) {
+  if (!quickContactModal.contains(e.target) && !quickContactBtn.contains(e.target)) {
+    quickContactModal.classList.remove('active');
+  }
+});
+
+// Quick contact form submission
+quickContactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('quickName').value;
+  const email = document.getElementById('quickEmail').value;
+  const message = document.getElementById('quickMessage').value;
+  
+  if (name && email && message) {
+    quickFormMessage.textContent = 'Thank you! We will get back to you soon.';
+    quickFormMessage.className = 'quick-form-message success';
+    quickFormMessage.style.display = 'block';
+    
+    quickContactForm.reset();
+    
+    setTimeout(() => {
+      quickFormMessage.style.display = 'none';
+      quickContactModal.classList.remove('active');
+    }, 3000);
+  } else {
+    quickFormMessage.textContent = 'Please fill in all fields.';
+    quickFormMessage.className = 'quick-form-message error';
+    quickFormMessage.style.display = 'block';
+  }
+});
+
+// Info modal content
+const modalContent = {
+  aviation: {
+    title: 'Aviation Services',
+    content: `
+      <h3>Comprehensive Aircraft Solutions</h3>
+      <p>Our aviation services division provides end-to-end support for all your aircraft maintenance, repair, and operational needs. With decades of combined experience and FAA-certified technicians, we ensure your fleet operates at peak performance.</p>
+      
+      <h3>Our Services Include:</h3>
+      <ul>
+        <li><strong>Aircraft Maintenance & Repair:</strong> Scheduled maintenance, inspections, and emergency repairs for fixed-wing and rotary aircraft</li>
+        <li><strong>Avionics Systems:</strong> Installation, troubleshooting, and upgrades of navigation, communication, and flight control systems</li>
+        <li><strong>Engine Services:</strong> Overhaul, diagnostics, and performance optimization</li>
+        <li><strong>Interior Refurbishment:</strong> Custom cabin upgrades and modifications</li>
+        <li><strong>Aircraft Management:</strong> Complete fleet management solutions including scheduling, compliance, and logistics</li>
+        <li><strong>24/7 AOG Support:</strong> Round-the-clock aircraft-on-ground emergency response</li>
+      </ul>
+      
+      <h3>Why Choose Our Aviation Services?</h3>
+      <p>We maintain the highest industry standards with ISO 9001 certification and Part 145 repair station approval. Our state-of-the-art facilities and experienced team ensure minimal downtime and maximum safety for your operations.</p>
+      
+      <a href="#contact" class="info-modal-cta">Request a Service Quote</a>
+    `
+  },
+  drones: {
+    title: 'Drone Solutions',
+    content: `
+      <h3>Advanced UAV Operations</h3>
+      <p>Transform your business with cutting-edge drone technology. Our drone solutions division offers comprehensive services from aerial surveying to custom UAV integration, helping you capture data and insights like never before.</p>
+      
+      <h3>Our Drone Services:</h3>
+      <ul>
+        <li><strong>Aerial Surveying & Mapping:</strong> High-resolution topographic surveys, 3D modeling, and photogrammetry</li>
+        <li><strong>Infrastructure Inspection:</strong> Safe, efficient inspections of bridges, towers, power lines, and industrial facilities</li>
+        <li><strong>Agricultural Monitoring:</strong> Crop health analysis, precision agriculture, and yield optimization</li>
+        <li><strong>Thermal Imaging:</strong> Energy audits, leak detection, and predictive maintenance</li>
+        <li><strong>Custom UAV Integration:</strong> Tailored drone solutions with specialized sensors and payloads</li>
+        <li><strong>Drone-as-a-Service:</strong> On-demand aerial data collection without the overhead of owning equipment</li>
+      </ul>
+      
+      <h3>Technology & Expertise</h3>
+      <p>We operate a diverse fleet of commercial drones equipped with the latest sensors, cameras, and LiDAR systems. Our FAA Part 107 certified pilots have completed thousands of successful missions across multiple industries.</p>
+      
+      <a href="#contact" class="info-modal-cta">Start Your Drone Project</a>
+    `
+  },
+  training: {
+    title: 'Training & Certification',
+    content: `
+      <h3>Industry-Leading Education Programs</h3>
+      <p>Elevate your team's skills with our comprehensive training programs. From drone pilot certification to advanced aviation maintenance courses, we offer the education you need to succeed in the aerospace industry.</p>
+      
+      <h3>Training Programs:</h3>
+      <ul>
+        <li><strong>Part 107 Drone Pilot Certification:</strong> Complete preparation for FAA remote pilot certification exam</li>
+        <li><strong>Advanced Drone Operations:</strong> Night operations, complex missions, and emergency procedures</li>
+        <li><strong>Aircraft Maintenance Training:</strong> A&P mechanic prep courses and specialized systems training</li>
+        <li><strong>Avionics Technician Courses:</strong> Modern avionics installation and troubleshooting</li>
+        <li><strong>Safety Management Systems:</strong> SMS implementation and risk management</li>
+        <li><strong>Corporate Training:</strong> Custom programs tailored to your organization's needs</li>
+      </ul>
+      
+      <h3>World-Class Instruction</h3>
+      <p>Our instructors bring real-world experience and hold multiple industry certifications. We offer flexible learning options including in-person classes, online courses, and hands-on workshops at our modern training facility.</p>
+      
+      <h3>Certification Support</h3>
+      <p>We guide you through the entire certification process, from initial application to exam preparation. Our students enjoy a 95% first-time pass rate on FAA exams.</p>
+      
+      <a href="#contact" class="info-modal-cta">Explore Training Options</a>
+    `
+  }
+};
+
+// Info modal functionality
+const infoModalOverlay = document.getElementById('infoModalOverlay');
+const infoModalTitle = document.getElementById('infoModalTitle');
+const infoModalBody = document.getElementById('infoModalBody');
+const infoModalClose = document.getElementById('infoModalClose');
+
+function openInfoModal(type) {
+  const content = modalContent[type];
+  if (content) {
+    infoModalTitle.textContent = content.title;
+    infoModalBody.innerHTML = content.content;
+    infoModalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
 }
+
+function closeInfoModal() {
+  infoModalOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+infoModalClose.addEventListener('click', closeInfoModal);
+
+infoModalOverlay.addEventListener('click', function(e) {
+  if (e.target === infoModalOverlay) {
+    closeInfoModal();
+  }
+});
+
+// Keyboard support for closing modal with ESC key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && infoModalOverlay.classList.contains('active')) {
+    closeInfoModal();
+  }
+});
+
+// Learn more button clicks
+document.querySelectorAll('.learn-more').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    const href = this.getAttribute('href');
+    
+    if (href === '#aviation') {
+      openInfoModal('aviation');
+    } else if (href === '#drone-ops') {
+      openInfoModal('drones');
+    } else if (href === '#training') {
+      openInfoModal('training');
+    }
+  });
+});
+
+// Close info modal when clicking on CTA links inside modals
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('info-modal-cta')) {
+    closeInfoModal();
+  }
+});
